@@ -11,4 +11,5 @@ _website/
 *.ebuild
 .sw?
 .*.sw?
-MANIFEST
+.tox
+.coverage

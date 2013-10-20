@@ -111,7 +111,8 @@ def run_tests(basedir, libdir):
     for dirname, dirs, files in shell.walk(basedir):
         dirs[:] = [item for item in dirs if item not in ('.svn', 'out')]
         dirs.sort()
-        files = [item for item in files if item.endswith('.py')]
+        files = [item for item in files if item.endswith('.py') and
+                 not item.startswith('test_')]
         if not files:
             continue
         if not _os.path.isdir(_os.path.join(basedir, dirname, 'out')):
